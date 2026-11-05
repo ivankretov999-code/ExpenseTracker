@@ -1,0 +1,20 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Spring Boot
+target/
+*.class
+
+# React
+node_modules/
+dist/
+
+# Gesla
+.env
+.env.*
+!.env.example
+
+# Ostalo
+.DS_Store
+Thumbs.db
