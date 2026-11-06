@@ -20,7 +20,7 @@ Projekt je razdeljen na frontend in backend. Frontend je narejen v Reactu, backe
 - PostgreSQL JDBC gonilnik
 - Lombok
 - Springdoc OpenAPI 3.1.1 (Swagger UI)
-- Maven (za odvisnosti in zagon projekta)
+- Maven 3.9.11 (za odvisnosti in zagon projekta)
 
 Različice odvisnosti, pri katerih ni posebej navedene številke, upravlja Spring Boot.
 
@@ -31,6 +31,8 @@ Različice odvisnosti, pri katerih ni posebej navedene številke, upravlja Sprin
 - Vite `^6.3.0`
 - `@vitejs/plugin-react` `^4.7.0`
 - JavaScript, HTML in CSS
+- Node.js 24.15.0
+- npm 11.12.1
 
 Znak `^` pomeni, da se lahko namesti tudi novejša združljiva različica. To so različice, zapisane v `package.json`.
 
@@ -48,16 +50,28 @@ ExpenseTracker/
 ├── backend/
 │   ├── src/
 │   │   └── main/
-│   │       ├── java/         # Java koda: entitete, DAO in REST
-│   │       └── resources/    # application.properties
-│   └── pom.xml               # Maven odvisnosti
+│   │       ├── java/
+│   │       │   └── com/
+│   │       │       └── example/
+│   │       │           └── expense_tracker/
+│   │       │               ├── vao/        # Entitete
+│   │       │               │   ├── Expense.java
+│   │       │               │   └── Category.java
+│   │       │               ├── dao/        # Dostop do baze
+│   │       │               ├── rest/       # REST API
+│   │       │               └── ExpenseTrackerApplication.java
+│   │       └── resources/                  # Nastavitve aplikacije
+│   └── pom.xml                             # Maven odvisnosti
 ├── frontend/
-│   ├── src/                  # React komponente in CSS
+│   ├── src/                                # React in CSS
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   └── style.css
 │   ├── index.html
-│   └── package.json          # Knjižnice in ukazi za frontend
-├── database/                 # Datoteke, povezane z bazo
-├── .gitignore                # Datoteke, ki jih ne nalagamo na GitHub
-└── README.md                 # Navodila za projekt
+│   └── package.json
+├── database/
+├── .gitignore
+└── README.md
 ```
 
 V `backend` imam Spring Boot aplikacijo in REST API. V `frontend` je uporabniški vmesnik. Mapa `database` vsebuje datoteke, povezane s podatkovno bazo.
